@@ -10,6 +10,7 @@ import via.varejo.model.Parcela;
 import via.varejo.service.strategy.ForwardSale;
 import via.varejo.service.strategy.InterestFreeInstallments;
 import via.varejo.service.strategy.InterestInstallments;
+import via.varejo.service.strategy.SaleStrategy;
 
 /**
  * Created by Cid Soares on 12/10/2019.
@@ -23,8 +24,8 @@ import via.varejo.service.strategy.InterestInstallments;
 public class SaleFactoryService {
 	
 	private ForwardSale forwardSale;
-	private InterestFreeInstallments interestFreeInstallments;
-	private InterestInstallments interestInstallments;
+	private SaleStrategy interestFreeInstallments;
+	private SaleStrategy interestInstallments;
 	
 	public SaleFactoryService() {
 		forwardSale = new ForwardSale();

@@ -1,17 +1,8 @@
 package via.varejo.service.strategy;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-
 import via.varejo.model.CondicaoPagamento;
 import via.varejo.model.Parcela;
-import via.varejo.model.Selic;
 
 /**
  * 
@@ -30,6 +21,6 @@ public class InterestFreeInstallments extends AbstractSelic implements SaleStrat
 	    return getListParcelas(portionValue, condicaoPagamento.getQtdeParcelas(), installmentsTax);
               
 	}	
-	
+
 
 }
