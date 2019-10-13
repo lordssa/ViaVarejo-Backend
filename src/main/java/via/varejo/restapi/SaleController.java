@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import via.varejo.exception.NonComplianceException;
 import via.varejo.model.Venda;
 import via.varejo.service.SaleService;
 
@@ -38,7 +39,11 @@ public class SaleController {
     public ResponseEntity resgataParcelas(Venda venda) {
 		try {			
 			return new ResponseEntity(_saleService.getParcelas(venda), HttpStatus.OK);
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
+			if(e.getClass().equals(NonComplianceException.class)) {
+				return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+			}
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
     }

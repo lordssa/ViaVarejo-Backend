@@ -1,0 +1,1 @@
+package via.varejo.exception;
